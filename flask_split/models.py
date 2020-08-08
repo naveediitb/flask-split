@@ -263,8 +263,9 @@ class Experiment(object):
                 experiment.reset()
                 for alternative in experiment.alternatives:
                     alternative.delete()
-                experiment = cls(redis, name, *alternatives)
-                experiment.save()
+            experiment = cls(redis, name, *alternatives)
+            experiment.save()
+                
         else:
             experiment = cls(redis, name, *alternatives)
             experiment.save()
